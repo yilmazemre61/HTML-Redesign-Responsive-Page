@@ -1,0 +1,235 @@
+body{
+    margin: 0px;
+    display: grid;
+    grid-template-areas: 
+    'header header header header'
+    'main main main main'
+    'footer footer footer footer';
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif;
+}
+p,a{
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+}
+/* header */
+header{
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+header div{
+    height: 90px;
+    flex-grow: 1;
+}
+header div a img{
+    width: auto;
+    height: 100%;
+}
+header nav div ul li{
+    padding: 0px 10px;
+}
+header  nav div ul  li  a{
+    color: #000;
+}
+header nav div ul{
+    display: flex;
+    justify-content: space-between;
+}
+header nav div ul li{
+    list-style: none;
+    padding: 30px;
+    font-size: 20px;
+}
+header nav div ul li a{
+    text-decoration: none;
+}
+header nav div ul li a::after{
+    padding-left: 30px;
+    content: " | ";
+}
+header nav div ul li:last-child a::after{
+    padding-left: 30px;
+    content: " ";
+}
+main{
+    grid-area: main;
+}
+/* row 1 */
+.row-1{
+    display: grid;
+    grid-template-rows: repeat(1, 100%);
+    background-image: url(../images/masthead.jpg);
+    height: 100vh;
+    background-size: cover;
+    align-items: center;
+}
+.row-1 div h2{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 100px 50px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 400;
+    width: 40%;
+}
+/* row 2 */
+.row-2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 40px;
+}
+.row-2 div img{
+    padding-top: 45px;
+    width: 100%;
+    height: auto;
+}
+.row-2 .one{
+    padding: 25px;
+}
+.one h2{
+    font-weight: 400;
+    font-size: 32px;
+}
+/* row 3 */
+.row-3{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 40px;
+    flex-direction: row-reverse;
+}
+.row-3 div img{
+    padding-top: 45px;
+    width: 100%;
+    height: auto;
+}
+.row-3 .two{
+    padding: 25px;
+}
+.two h2{
+    font-weight: 400;
+    font-size: 32px;
+}
+/* row 4 */
+.row-4{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+.row-4 div figure{
+    text-align: center;
+    padding: 0px;
+}
+.row-4  div  figure img{
+    width: 100%;
+    height: auto;
+}
+.row-4 div figure h4{
+    color: #000;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* footer */
+footer{
+    grid-area: footer;
+    background-color: #000;
+    height: 100px;
+}
+footer div p{
+    color: #fff;
+    font-style: italic;
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+/* Media Queries */
+
+
+/* Desktop */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .row-2, .row-3{
+        padding: 35px 10px;
+    }
+    .row-2 div img{
+        padding-top: 55px;
+    }
+    .row-2 .one{
+        padding: 35px;
+    }
+    .one h2{
+        font-size: 25px;
+    }
+    .one p{
+        font-size: 14px;
+    }
+    .row-3 div img{
+        padding-top: 55px;
+    }
+    .row-3 .two{
+        padding: 35px;
+    }
+    .two h2{
+        font-size: 25px;
+    }
+    .two p{
+        font-size: 14px;
+    }
+}
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 170px;
+    }
+    header nav div ul li{
+        padding: 10px;
+        font-size: 15px;
+    }
+    header nav div ul li a::after{
+        padding-left: 7px;
+    }
+    header nav div ul li:last-child a::after{
+        padding-left: 10px;
+        content: " ";
+    }
+    header > div > a > img{
+        width: 100%;
+        height: auto;
+    }
+    .row-1{
+        display: grid;
+        padding: 0px 100px;
+        width: auto;
+        height: 250px;
+    }
+    .row-1 div h2{
+        padding: 50px 20px;
+        font-size: 12px;
+        width: auto;
+    }
+    .row-2, .row-3{
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: auto;
+        padding: 10px 40px;
+    }
+    .row-3 div:nth-child(1){
+        order: 2;
+    }
+    .row-3 div:nth-child(2){
+        order: 1;
+    }
+    .row-2 div h2, .row-3 div h2{
+        text-align: center;
+    }
+    .row-4{
+        grid-template-columns: repeat(2, 50%);
+    }
+    footer div p{
+        font-size: 12px;
+    }
+}
